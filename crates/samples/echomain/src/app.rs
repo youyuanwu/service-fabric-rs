@@ -50,13 +50,13 @@ impl ServiceFactory {
 impl IFabricStatelessServiceFactory_Impl for ServiceFactory {
     fn CreateInstance(
         &self,
-        servicetypename: &::windows::core::PCWSTR,
+        servicetypename: &::windows_core::PCWSTR,
         servicename: *const u16,
         initializationdatalength: u32,
         initializationdata: *const u8,
-        partitionid: &::windows::core::GUID,
+        partitionid: &::windows_core::GUID,
         instanceid: i64,
-    ) -> ::windows::core::Result<IFabricStatelessServiceInstance> {
+    ) -> ::windows_core::Result<IFabricStatelessServiceInstance> {
         let mut init_data: String = "".to_string();
         if initializationdata != null() && initializationdatalength != 0 {
             init_data = unsafe {

@@ -1,4 +1,3 @@
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[inline]
 pub unsafe fn CreateFabricTransportClient<P0, P1, P2, P3>(
     interfaceid: *const ::windows_core::GUID,
@@ -38,7 +37,6 @@ where
     )
     .from_abi(result__)
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[inline]
 pub unsafe fn CreateFabricTransportListener<P0, P1, P2>(
     interfaceid: *const ::windows_core::GUID,
@@ -77,8 +75,8 @@ where
     )
     .from_abi(result__)
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportCallbackMessageHandler(::windows_core::IUnknown);
 impl IFabricTransportCallbackMessageHandler {
     pub unsafe fn HandleOneWay<P0>(&self, message: P0) -> ::windows_core::Result<()>
@@ -96,26 +94,8 @@ impl IFabricTransportCallbackMessageHandler {
     IFabricTransportCallbackMessageHandler,
     ::windows_core::IUnknown
 );
-impl ::core::cmp::PartialEq for IFabricTransportCallbackMessageHandler {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportCallbackMessageHandler {}
-impl ::core::fmt::Debug for IFabricTransportCallbackMessageHandler {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportCallbackMessageHandler")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportCallbackMessageHandler {
     type Vtable = IFabricTransportCallbackMessageHandler_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportCallbackMessageHandler {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportCallbackMessageHandler {
     const IID: ::windows_core::GUID =
@@ -130,8 +110,8 @@ pub struct IFabricTransportCallbackMessageHandler_Vtbl {
         message: *mut ::core::ffi::c_void,
     ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportClient(::windows_core::IUnknown);
 impl IFabricTransportClient {
     pub unsafe fn BeginRequest<P0, P1>(
@@ -238,26 +218,8 @@ impl IFabricTransportClient {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricTransportClient, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricTransportClient {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportClient {}
-impl ::core::fmt::Debug for IFabricTransportClient {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportClient")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportClient {
     type Vtable = IFabricTransportClient_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportClient {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportClient {
     const IID: ::windows_core::GUID =
@@ -305,8 +267,8 @@ pub struct IFabricTransportClient_Vtbl {
     ) -> ::windows_core::HRESULT,
     pub Abort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportClientConnection(::windows_core::IUnknown);
 impl IFabricTransportClientConnection {
     pub unsafe fn Send<P0>(&self, message: P0) -> ::windows_core::Result<()>
@@ -329,26 +291,8 @@ impl IFabricTransportClientConnection {
     IFabricTransportClientConnection,
     ::windows_core::IUnknown
 );
-impl ::core::cmp::PartialEq for IFabricTransportClientConnection {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportClientConnection {}
-impl ::core::fmt::Debug for IFabricTransportClientConnection {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportClientConnection")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportClientConnection {
     type Vtable = IFabricTransportClientConnection_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportClientConnection {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportClientConnection {
     const IID: ::windows_core::GUID =
@@ -364,8 +308,8 @@ pub struct IFabricTransportClientConnection_Vtbl {
     ) -> ::windows_core::HRESULT,
     pub get_ClientId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> *mut u16,
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportClientEventHandler(::windows_core::IUnknown);
 impl IFabricTransportClientEventHandler {
     pub unsafe fn OnConnected<P0>(&self, connectionaddress: P0) -> ::windows_core::Result<()>
@@ -398,26 +342,8 @@ impl IFabricTransportClientEventHandler {
     IFabricTransportClientEventHandler,
     ::windows_core::IUnknown
 );
-impl ::core::cmp::PartialEq for IFabricTransportClientEventHandler {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportClientEventHandler {}
-impl ::core::fmt::Debug for IFabricTransportClientEventHandler {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportClientEventHandler")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportClientEventHandler {
     type Vtable = IFabricTransportClientEventHandler_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportClientEventHandler {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportClientEventHandler {
     const IID: ::windows_core::GUID =
@@ -437,8 +363,8 @@ pub struct IFabricTransportClientEventHandler_Vtbl {
         error: ::windows_core::HRESULT,
     ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportConnectionHandler(::windows_core::IUnknown);
 impl IFabricTransportConnectionHandler {
     pub unsafe fn BeginProcessConnect<P0, P1>(
@@ -505,26 +431,8 @@ impl IFabricTransportConnectionHandler {
     IFabricTransportConnectionHandler,
     ::windows_core::IUnknown
 );
-impl ::core::cmp::PartialEq for IFabricTransportConnectionHandler {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportConnectionHandler {}
-impl ::core::fmt::Debug for IFabricTransportConnectionHandler {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportConnectionHandler")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportConnectionHandler {
     type Vtable = IFabricTransportConnectionHandler_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportConnectionHandler {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportConnectionHandler {
     const IID: ::windows_core::GUID =
@@ -557,8 +465,8 @@ pub struct IFabricTransportConnectionHandler_Vtbl {
         context: *mut ::core::ffi::c_void,
     ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportListener(::windows_core::IUnknown);
 impl IFabricTransportListener {
     pub unsafe fn BeginOpen<P0>(
@@ -621,26 +529,8 @@ impl IFabricTransportListener {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricTransportListener, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricTransportListener {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportListener {}
-impl ::core::fmt::Debug for IFabricTransportListener {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportListener")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportListener {
     type Vtable = IFabricTransportListener_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportListener {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportListener {
     const IID: ::windows_core::GUID =
@@ -671,8 +561,8 @@ pub struct IFabricTransportListener_Vtbl {
     ) -> ::windows_core::HRESULT,
     pub Abort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportMessage(::windows_core::IUnknown);
 impl IFabricTransportMessage {
     pub unsafe fn GetHeaderAndBodyBuffer(
@@ -693,26 +583,8 @@ impl IFabricTransportMessage {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricTransportMessage, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricTransportMessage {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportMessage {}
-impl ::core::fmt::Debug for IFabricTransportMessage {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportMessage")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportMessage {
     type Vtable = IFabricTransportMessage_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportMessage {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportMessage {
     const IID: ::windows_core::GUID =
@@ -730,14 +602,14 @@ pub struct IFabricTransportMessage_Vtbl {
     ),
     pub Dispose: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportMessageDisposer(::windows_core::IUnknown);
 impl IFabricTransportMessageDisposer {
     pub unsafe fn Dispose(&self, messages: &[::core::option::Option<IFabricTransportMessage>]) {
         (::windows_core::Interface::vtable(self).Dispose)(
             ::windows_core::Interface::as_raw(self),
-            messages.len() as _,
+            messages.len().try_into().unwrap(),
             ::core::mem::transmute(messages.as_ptr()),
         )
     }
@@ -746,26 +618,8 @@ impl IFabricTransportMessageDisposer {
     IFabricTransportMessageDisposer,
     ::windows_core::IUnknown
 );
-impl ::core::cmp::PartialEq for IFabricTransportMessageDisposer {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportMessageDisposer {}
-impl ::core::fmt::Debug for IFabricTransportMessageDisposer {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportMessageDisposer")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportMessageDisposer {
     type Vtable = IFabricTransportMessageDisposer_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportMessageDisposer {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportMessageDisposer {
     const IID: ::windows_core::GUID =
@@ -781,8 +635,8 @@ pub struct IFabricTransportMessageDisposer_Vtbl {
         messages: *const *mut ::core::ffi::c_void,
     ),
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricTransportMessageHandler(::windows_core::IUnknown);
 impl IFabricTransportMessageHandler {
     pub unsafe fn BeginProcessRequest<P0, P1>(
@@ -839,26 +693,8 @@ impl IFabricTransportMessageHandler {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricTransportMessageHandler, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricTransportMessageHandler {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricTransportMessageHandler {}
-impl ::core::fmt::Debug for IFabricTransportMessageHandler {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricTransportMessageHandler")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricTransportMessageHandler {
     type Vtable = IFabricTransportMessageHandler_Vtbl;
-}
-impl ::core::clone::Clone for IFabricTransportMessageHandler {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricTransportMessageHandler {
     const IID: ::windows_core::GUID =
@@ -888,7 +724,6 @@ pub struct IFabricTransportMessageHandler_Vtbl {
     ) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 pub struct FABRIC_TRANSPORT_LISTEN_ADDRESS {
     pub IPAddressOrFQDN: ::windows_core::PCWSTR,
     pub Port: u32,
@@ -926,7 +761,6 @@ impl ::core::default::Default for FABRIC_TRANSPORT_LISTEN_ADDRESS {
     }
 }
 #[repr(C)]
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 pub struct FABRIC_TRANSPORT_MESSAGE_BUFFER {
     pub BufferSize: u32,
     pub Buffer: *mut u8,
@@ -960,7 +794,6 @@ impl ::core::default::Default for FABRIC_TRANSPORT_MESSAGE_BUFFER {
     }
 }
 #[repr(C)]
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`*"]
 pub struct FABRIC_TRANSPORT_SETTINGS {
     pub OperationTimeoutInSeconds: u32,
     pub KeepAliveTimeoutInSeconds: u32,

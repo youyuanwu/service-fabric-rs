@@ -1,4 +1,3 @@
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricAtomicGroupStateProvider_Impl: Sized {
     fn BeginAtomicGroupCommit(
         &self,
@@ -159,11 +158,10 @@ impl IFabricAtomicGroupStateProvider_Vtbl {
             EndUndoProgress: EndUndoProgress::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricAtomicGroupStateProvider as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricAtomicGroupStateProvider as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricAtomicGroupStateReplicator_Impl: Sized {
     fn CreateAtomicGroup(&self) -> ::windows_core::Result<i64>;
     fn BeginReplicateAtomicGroupOperation(
@@ -381,11 +379,11 @@ impl IFabricAtomicGroupStateReplicator_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricAtomicGroupStateReplicator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricAtomicGroupStateReplicator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackage_Impl: Sized {
     fn get_Description(&self) -> *mut super::super::FABRIC_CODE_PACKAGE_DESCRIPTION;
@@ -428,11 +426,11 @@ impl IFabricCodePackage_Vtbl {
             get_Path: get_Path::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackage as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackage as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackage2_Impl: Sized + IFabricCodePackage_Impl {
     fn get_SetupEntryPointRunAsPolicy(&self) -> *mut super::super::FABRIC_RUNAS_POLICY_DESCRIPTION;
@@ -475,12 +473,12 @@ impl IFabricCodePackage2_Vtbl {
             get_EntryPointRunAsPolicy: get_EntryPointRunAsPolicy::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackage2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackage as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackage2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackage as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackageActivationContext_Impl: Sized {
     fn get_ContextId(&self) -> ::windows_core::PCWSTR;
@@ -944,11 +942,11 @@ impl IFabricCodePackageActivationContext_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackageActivationContext2_Impl:
     Sized + IFabricCodePackageActivationContext_Impl
@@ -1033,12 +1031,12 @@ impl IFabricCodePackageActivationContext2_Vtbl {
             GetServiceManifestVersion: GetServiceManifestVersion::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackageActivationContext3_Impl:
     Sized + IFabricCodePackageActivationContext2_Impl
@@ -1119,13 +1117,13 @@ impl IFabricCodePackageActivationContext3_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackageActivationContext4_Impl:
     Sized + IFabricCodePackageActivationContext3_Impl
@@ -1221,14 +1219,14 @@ impl IFabricCodePackageActivationContext4_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageActivationContext4 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageActivationContext4 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackageActivationContext5_Impl:
     Sized + IFabricCodePackageActivationContext4_Impl
@@ -1273,15 +1271,15 @@ impl IFabricCodePackageActivationContext5_Vtbl {
             get_ServicePublishAddress: get_ServicePublishAddress::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageActivationContext5 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext4 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageActivationContext5 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext4 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackageActivationContext6_Impl:
     Sized + IFabricCodePackageActivationContext5_Impl
@@ -1324,16 +1322,15 @@ impl IFabricCodePackageActivationContext6_Vtbl {
             GetDirectory: GetDirectory::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageActivationContext6 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext4 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricCodePackageActivationContext5 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageActivationContext6 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext4 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricCodePackageActivationContext5 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricCodePackageActivator_Impl: Sized {
     fn BeginActivateCodePackage(
         &self,
@@ -1517,11 +1514,10 @@ impl IFabricCodePackageActivator_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageActivator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageActivator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricCodePackageChangeHandler_Impl: Sized {
     fn OnPackageAdded(
         &self,
@@ -1604,11 +1600,11 @@ impl IFabricCodePackageChangeHandler_Vtbl {
             OnPackageModified: OnPackageModified::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageChangeHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageChangeHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricCodePackageEventHandler_Impl: Sized {
     fn OnCodePackageEvent(
@@ -1647,11 +1643,11 @@ impl IFabricCodePackageEventHandler_Vtbl {
             OnCodePackageEvent: OnCodePackageEvent::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricCodePackageEventHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricCodePackageEventHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricConfigurationPackage_Impl: Sized {
     fn get_Description(&self) -> *mut super::super::FABRIC_CONFIGURATION_PACKAGE_DESCRIPTION;
@@ -1784,11 +1780,11 @@ impl IFabricConfigurationPackage_Vtbl {
             DecryptValue: DecryptValue::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricConfigurationPackage as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricConfigurationPackage as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricConfigurationPackage2_Impl: Sized + IFabricConfigurationPackage_Impl {
     fn GetValues(
@@ -1834,12 +1830,11 @@ impl IFabricConfigurationPackage2_Vtbl {
             GetValues: GetValues::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricConfigurationPackage2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricConfigurationPackage as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricConfigurationPackage2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricConfigurationPackage as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricConfigurationPackageChangeHandler_Impl: Sized {
     fn OnPackageAdded(
         &self,
@@ -1922,11 +1917,10 @@ impl IFabricConfigurationPackageChangeHandler_Vtbl {
             OnPackageModified: OnPackageModified::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricConfigurationPackageChangeHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricConfigurationPackageChangeHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricDataPackage_Impl: Sized {
     fn get_Description(&self) -> *mut super::super::FABRIC_DATA_PACKAGE_DESCRIPTION;
     fn get_Path(&self) -> ::windows_core::PCWSTR;
@@ -1966,11 +1960,10 @@ impl IFabricDataPackage_Vtbl {
             get_Path: get_Path::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricDataPackage as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricDataPackage as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricDataPackageChangeHandler_Impl: Sized {
     fn OnPackageAdded(
         &self,
@@ -2053,11 +2046,10 @@ impl IFabricDataPackageChangeHandler_Vtbl {
             OnPackageModified: OnPackageModified::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricDataPackageChangeHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricDataPackageChangeHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricEseLocalStoreSettingsResult_Impl: Sized {
     fn get_Settings(&self) -> *mut super::super::FABRIC_ESE_LOCAL_STORE_SETTINGS;
 }
@@ -2084,11 +2076,10 @@ impl IFabricEseLocalStoreSettingsResult_Vtbl {
             get_Settings: get_Settings::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricEseLocalStoreSettingsResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricEseLocalStoreSettingsResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricKeyValueStoreEnumerator_Impl: Sized {
     fn EnumerateByKey(
         &self,
@@ -2150,11 +2141,11 @@ impl IFabricKeyValueStoreEnumerator_Vtbl {
             EnumerateMetadataByKey: EnumerateMetadataByKey::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreEnumerator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreEnumerator2_Impl:
     Sized + IFabricKeyValueStoreEnumerator_Impl
@@ -2231,12 +2222,11 @@ impl IFabricKeyValueStoreEnumerator2_Vtbl {
             EnumerateMetadataByKey2: EnumerateMetadataByKey2::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreEnumerator2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreEnumerator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreEnumerator2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricKeyValueStoreItemEnumerator_Impl: Sized {
     fn MoveNext(&self) -> ::windows_core::Result<()>;
     fn get_Current(&self) -> ::core::option::Option<IFabricKeyValueStoreItemResult>;
@@ -2276,11 +2266,10 @@ impl IFabricKeyValueStoreItemEnumerator_Vtbl {
             get_Current: get_Current::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreItemEnumerator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreItemEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricKeyValueStoreItemEnumerator2_Impl:
     Sized + IFabricKeyValueStoreItemEnumerator_Impl
 {
@@ -2316,12 +2305,11 @@ impl IFabricKeyValueStoreItemEnumerator2_Vtbl {
             TryMoveNext: TryMoveNext::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreItemEnumerator2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreItemEnumerator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreItemEnumerator2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreItemEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricKeyValueStoreItemMetadataEnumerator_Impl: Sized {
     fn MoveNext(&self) -> ::windows_core::Result<()>;
     fn get_Current(&self) -> ::core::option::Option<IFabricKeyValueStoreItemMetadataResult>;
@@ -2361,11 +2349,10 @@ impl IFabricKeyValueStoreItemMetadataEnumerator_Vtbl {
             get_Current: get_Current::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreItemMetadataEnumerator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreItemMetadataEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricKeyValueStoreItemMetadataEnumerator2_Impl:
     Sized + IFabricKeyValueStoreItemMetadataEnumerator_Impl
 {
@@ -2402,11 +2389,13 @@ impl IFabricKeyValueStoreItemMetadataEnumerator2_Vtbl {
             TryMoveNext: TryMoveNext::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == & < IFabricKeyValueStoreItemMetadataEnumerator2 < > as::windows_core::ComInterface >::IID || iid == & < IFabricKeyValueStoreItemMetadataEnumerator as::windows_core::ComInterface >::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreItemMetadataEnumerator2 as ::windows_core::ComInterface>::IID
+            || *iid
+                == <IFabricKeyValueStoreItemMetadataEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreItemMetadataResult_Impl: Sized {
     fn get_Metadata(&self) -> *mut super::super::FABRIC_KEY_VALUE_STORE_ITEM_METADATA;
@@ -2436,11 +2425,11 @@ impl IFabricKeyValueStoreItemMetadataResult_Vtbl {
             get_Metadata: get_Metadata::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreItemMetadataResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreItemMetadataResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreItemResult_Impl: Sized {
     fn get_Item(&self) -> *mut super::super::FABRIC_KEY_VALUE_STORE_ITEM;
@@ -2470,11 +2459,11 @@ impl IFabricKeyValueStoreItemResult_Vtbl {
             get_Item: get_Item::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreItemResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreItemResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreNotification_Impl:
     Sized + IFabricKeyValueStoreItemResult_Impl
@@ -2506,12 +2495,11 @@ impl IFabricKeyValueStoreNotification_Vtbl {
             IsDelete: IsDelete::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreNotification as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreItemResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreNotification as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreItemResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricKeyValueStoreNotificationEnumerator_Impl: Sized {
     fn MoveNext(&self) -> ::windows_core::Result<()>;
     fn get_Current(&self) -> ::core::option::Option<IFabricKeyValueStoreNotification>;
@@ -2564,11 +2552,10 @@ impl IFabricKeyValueStoreNotificationEnumerator_Vtbl {
             Reset: Reset::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreNotificationEnumerator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreNotificationEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricKeyValueStoreNotificationEnumerator2_Impl:
     Sized + IFabricKeyValueStoreNotificationEnumerator_Impl
 {
@@ -2605,11 +2592,13 @@ impl IFabricKeyValueStoreNotificationEnumerator2_Vtbl {
             TryMoveNext: TryMoveNext::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == & < IFabricKeyValueStoreNotificationEnumerator2 < > as::windows_core::ComInterface >::IID || iid == & < IFabricKeyValueStoreNotificationEnumerator as::windows_core::ComInterface >::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreNotificationEnumerator2 as ::windows_core::ComInterface>::IID
+            || *iid
+                == <IFabricKeyValueStoreNotificationEnumerator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreReplica_Impl: Sized + IFabricStatefulServiceReplica_Impl {
     fn GetCurrentEpoch(
@@ -2962,12 +2951,12 @@ impl IFabricKeyValueStoreReplica_Vtbl {
             EnumerateMetadataByKey: EnumerateMetadataByKey::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreReplica2_Impl: Sized + IFabricKeyValueStoreReplica_Impl {
     fn Backup(&self, backupdirectory: &::windows_core::PCWSTR) -> ::windows_core::Result<()>;
@@ -3037,13 +3026,13 @@ impl IFabricKeyValueStoreReplica2_Vtbl {
             CreateTransaction2: CreateTransaction2::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreReplica3_Impl: Sized + IFabricKeyValueStoreReplica2_Impl {
     fn BeginBackup(
@@ -3113,14 +3102,14 @@ impl IFabricKeyValueStoreReplica3_Vtbl {
             EndBackup: EndBackup::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreReplica4_Impl: Sized + IFabricKeyValueStoreReplica3_Impl {
     fn BeginRestore(
@@ -3184,15 +3173,15 @@ impl IFabricKeyValueStoreReplica4_Vtbl {
             EndRestore: EndRestore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreReplica4 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreReplica4 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreReplica5_Impl: Sized + IFabricKeyValueStoreReplica4_Impl {
     fn TryAdd(
@@ -3436,16 +3425,16 @@ impl IFabricKeyValueStoreReplica5_Vtbl {
             EnumerateMetadataByKey2: EnumerateMetadataByKey2::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreReplica5 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica4 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreReplica5 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica4 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricKeyValueStoreReplica6_Impl: Sized + IFabricKeyValueStoreReplica5_Impl {
     fn BeginRestore2(
@@ -3494,17 +3483,16 @@ impl IFabricKeyValueStoreReplica6_Vtbl {
             BeginRestore2: BeginRestore2::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricKeyValueStoreReplica6 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica4 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricKeyValueStoreReplica5 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricKeyValueStoreReplica6 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica4 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricKeyValueStoreReplica5 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricNodeContextResult_Impl: Sized {
     fn get_NodeContext(&self) -> *mut super::super::FABRIC_NODE_CONTEXT;
 }
@@ -3531,11 +3519,10 @@ impl IFabricNodeContextResult_Vtbl {
             get_NodeContext: get_NodeContext::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricNodeContextResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricNodeContextResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricNodeContextResult2_Impl: Sized + IFabricNodeContextResult_Impl {
     fn GetDirectory(
         &self,
@@ -3573,12 +3560,11 @@ impl IFabricNodeContextResult2_Vtbl {
             GetDirectory: GetDirectory::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricNodeContextResult2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricNodeContextResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricNodeContextResult2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricNodeContextResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricOperation_Impl: Sized {
     fn get_Metadata(&self) -> *mut super::super::FABRIC_OPERATION_METADATA;
     fn GetData(
@@ -3641,11 +3627,10 @@ impl IFabricOperation_Vtbl {
             Acknowledge: Acknowledge::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricOperation as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricOperation as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricOperationData_Impl: Sized {
     fn GetData(
         &self,
@@ -3682,11 +3667,10 @@ impl IFabricOperationData_Vtbl {
             GetData: GetData::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricOperationData as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricOperationData as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricOperationDataStream_Impl: Sized {
     fn BeginGetNext(
         &self,
@@ -3748,11 +3732,10 @@ impl IFabricOperationDataStream_Vtbl {
             EndGetNext: EndGetNext::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricOperationDataStream as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricOperationDataStream as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricOperationStream_Impl: Sized {
     fn BeginGetOperation(
         &self,
@@ -3814,11 +3797,10 @@ impl IFabricOperationStream_Vtbl {
             EndGetOperation: EndGetOperation::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricOperationStream as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricOperationStream as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricOperationStream2_Impl: Sized + IFabricOperationStream_Impl {
     fn ReportFault(&self, faulttype: super::super::FABRIC_FAULT_TYPE)
         -> ::windows_core::Result<()>;
@@ -3848,12 +3830,11 @@ impl IFabricOperationStream2_Vtbl {
             ReportFault: ReportFault::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricOperationStream2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricOperationStream as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricOperationStream2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricOperationStream as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricPrimaryReplicator_Impl: Sized + IFabricReplicator_Impl {
     fn BeginOnDataLoss(
         &self,
@@ -4075,12 +4056,11 @@ impl IFabricPrimaryReplicator_Vtbl {
             RemoveReplica: RemoveReplica::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricPrimaryReplicator as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricReplicator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricPrimaryReplicator as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricReplicator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricProcessExitHandler_Impl: Sized {
     fn FabricProcessExited(&self);
 }
@@ -4107,11 +4087,10 @@ impl IFabricProcessExitHandler_Vtbl {
             FabricProcessExited: FabricProcessExited::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricProcessExitHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricProcessExitHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricReplicator_Impl: Sized {
     fn BeginOpen(
         &self,
@@ -4365,11 +4344,10 @@ impl IFabricReplicator_Vtbl {
             GetCatchUpCapability: GetCatchUpCapability::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricReplicator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricReplicator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricReplicatorCatchupSpecificQuorum_Impl: Sized {}
 impl ::windows_core::RuntimeName for IFabricReplicatorCatchupSpecificQuorum {}
 impl IFabricReplicatorCatchupSpecificQuorum_Vtbl {
@@ -4382,11 +4360,11 @@ impl IFabricReplicatorCatchupSpecificQuorum_Vtbl {
             base__: ::windows_core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricReplicatorCatchupSpecificQuorum as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricReplicatorCatchupSpecificQuorum as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricReplicatorSettingsResult_Impl: Sized {
     fn get_ReplicatorSettings(&self) -> *mut super::super::FABRIC_REPLICATOR_SETTINGS;
@@ -4416,11 +4394,10 @@ impl IFabricReplicatorSettingsResult_Vtbl {
             get_ReplicatorSettings: get_ReplicatorSettings::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricReplicatorSettingsResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricReplicatorSettingsResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricRuntime_Impl: Sized {
     fn BeginRegisterStatelessServiceFactory(
         &self,
@@ -4712,11 +4689,10 @@ impl IFabricRuntime_Vtbl {
             RegisterServiceGroupFactory: RegisterServiceGroupFactory::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricRuntime as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricRuntime as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricSecondaryEventHandler_Impl: Sized {
     fn OnCopyComplete(
         &self,
@@ -4766,11 +4742,10 @@ impl IFabricSecondaryEventHandler_Vtbl {
             OnReplicationOperation: OnReplicationOperation::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricSecondaryEventHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricSecondaryEventHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricSecurityCredentialsResult_Impl: Sized {
     fn get_SecurityCredentials(&self) -> *mut super::super::FABRIC_SECURITY_CREDENTIALS;
 }
@@ -4797,11 +4772,10 @@ impl IFabricSecurityCredentialsResult_Vtbl {
             get_SecurityCredentials: get_SecurityCredentials::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricSecurityCredentialsResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricSecurityCredentialsResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricServiceGroupFactory_Impl: Sized {}
 impl ::windows_core::RuntimeName for IFabricServiceGroupFactory {}
 impl IFabricServiceGroupFactory_Vtbl {
@@ -4814,11 +4788,10 @@ impl IFabricServiceGroupFactory_Vtbl {
             base__: ::windows_core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricServiceGroupFactory as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricServiceGroupFactory as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricServiceGroupFactoryBuilder_Impl: Sized {
     fn AddStatelessServiceFactory(
         &self,
@@ -4916,11 +4889,10 @@ impl IFabricServiceGroupFactoryBuilder_Vtbl {
             ToServiceGroupFactory: ToServiceGroupFactory::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricServiceGroupFactoryBuilder as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricServiceGroupFactoryBuilder as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricServiceGroupPartition_Impl: Sized {
     fn ResolveMember(
         &self,
@@ -4963,11 +4935,10 @@ impl IFabricServiceGroupPartition_Vtbl {
             ResolveMember: ResolveMember::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricServiceGroupPartition as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricServiceGroupPartition as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStateProvider_Impl: Sized {
     fn BeginUpdateEpoch(
         &self,
@@ -5148,11 +5119,11 @@ impl IFabricStateProvider_Vtbl {
             GetCopyState: GetCopyState::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStateProvider as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStateProvider as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStateReplicator_Impl: Sized {
     fn BeginReplicate(
@@ -5280,11 +5251,11 @@ impl IFabricStateReplicator_Vtbl {
             UpdateReplicatorSettings: UpdateReplicatorSettings::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStateReplicator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStateReplicator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStateReplicator2_Impl: Sized + IFabricStateReplicator_Impl {
     fn GetReplicatorSettings(&self) -> ::windows_core::Result<IFabricReplicatorSettingsResult>;
@@ -5321,12 +5292,11 @@ impl IFabricStateReplicator2_Vtbl {
             GetReplicatorSettings: GetReplicatorSettings::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStateReplicator2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStateReplicator as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStateReplicator2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStateReplicator as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStatefulServiceFactory_Impl: Sized {
     fn CreateReplica(
         &self,
@@ -5381,11 +5351,11 @@ impl IFabricStatefulServiceFactory_Vtbl {
             CreateReplica: CreateReplica::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatefulServiceFactory as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatefulServiceFactory as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStatefulServicePartition_Impl: Sized {
     fn GetPartitionInfo(
@@ -5536,11 +5506,11 @@ impl IFabricStatefulServicePartition_Vtbl {
             ReportFault: ReportFault::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStatefulServicePartition1_Impl:
     Sized + IFabricStatefulServicePartition_Impl
@@ -5577,12 +5547,12 @@ impl IFabricStatefulServicePartition1_Vtbl {
             ReportMoveCost: ReportMoveCost::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatefulServicePartition1 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatefulServicePartition1 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStatefulServicePartition2_Impl:
     Sized + IFabricStatefulServicePartition1_Impl
@@ -5637,13 +5607,13 @@ impl IFabricStatefulServicePartition2_Vtbl {
             ReportPartitionHealth: ReportPartitionHealth::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatefulServicePartition2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServicePartition1 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatefulServicePartition2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServicePartition1 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStatefulServicePartition3_Impl:
     Sized + IFabricStatefulServicePartition2_Impl
@@ -5708,14 +5678,13 @@ impl IFabricStatefulServicePartition3_Vtbl {
             ReportPartitionHealth2: ReportPartitionHealth2::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatefulServicePartition3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServicePartition1 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatefulServicePartition2 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatefulServicePartition3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServicePartition as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServicePartition1 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatefulServicePartition2 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStatefulServiceReplica_Impl: Sized {
     fn BeginOpen(
         &self,
@@ -5893,11 +5862,10 @@ impl IFabricStatefulServiceReplica_Vtbl {
             Abort: Abort::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatefulServiceReplica as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStatelessServiceFactory_Impl: Sized {
     fn CreateInstance(
         &self,
@@ -5952,11 +5920,10 @@ impl IFabricStatelessServiceFactory_Vtbl {
             CreateInstance: CreateInstance::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatelessServiceFactory as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatelessServiceFactory as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStatelessServiceInstance_Impl: Sized {
     fn BeginOpen(
         &self,
@@ -6078,11 +6045,10 @@ impl IFabricStatelessServiceInstance_Vtbl {
             Abort: Abort::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatelessServiceInstance as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatelessServiceInstance as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStatelessServicePartition_Impl: Sized {
     fn GetPartitionInfo(
         &self,
@@ -6157,11 +6123,10 @@ impl IFabricStatelessServicePartition_Vtbl {
             ReportFault: ReportFault::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStatelessServicePartition1_Impl:
     Sized + IFabricStatelessServicePartition_Impl
 {
@@ -6195,12 +6160,12 @@ impl IFabricStatelessServicePartition1_Vtbl {
             ReportMoveCost: ReportMoveCost::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatelessServicePartition1 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatelessServicePartition1 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStatelessServicePartition2_Impl:
     Sized + IFabricStatelessServicePartition1_Impl
@@ -6255,13 +6220,13 @@ impl IFabricStatelessServicePartition2_Vtbl {
             ReportPartitionHealth: ReportPartitionHealth::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatelessServicePartition2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatelessServicePartition1 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatelessServicePartition2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatelessServicePartition1 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricStatelessServicePartition3_Impl:
     Sized + IFabricStatelessServicePartition2_Impl
@@ -6326,14 +6291,13 @@ impl IFabricStatelessServicePartition3_Vtbl {
             ReportPartitionHealth2: ReportPartitionHealth2::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStatelessServicePartition3 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatelessServicePartition1 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStatelessServicePartition2 as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStatelessServicePartition3 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatelessServicePartition as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatelessServicePartition1 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStatelessServicePartition2 as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStoreEventHandler_Impl: Sized {
     fn OnDataLoss(&self);
 }
@@ -6360,11 +6324,10 @@ impl IFabricStoreEventHandler_Vtbl {
             OnDataLoss: OnDataLoss::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStoreEventHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStoreEventHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStoreEventHandler2_Impl: Sized + IFabricStoreEventHandler_Impl {
     fn BeginOnDataLoss(
         &self,
@@ -6426,12 +6389,11 @@ impl IFabricStoreEventHandler2_Vtbl {
             EndOnDataLoss: EndOnDataLoss::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStoreEventHandler2 as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricStoreEventHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStoreEventHandler2 as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricStoreEventHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricStorePostBackupHandler_Impl: Sized {
     fn BeginPostBackup(
         &self,
@@ -6498,11 +6460,10 @@ impl IFabricStorePostBackupHandler_Vtbl {
             EndPostBackup: EndPostBackup::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStorePostBackupHandler as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStorePostBackupHandler as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricTransaction_Impl: Sized + IFabricTransactionBase_Impl {
     fn BeginCommit(
         &self,
@@ -6582,12 +6543,11 @@ impl IFabricTransaction_Vtbl {
             Rollback: Rollback::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricTransaction as ::windows_core::ComInterface>::IID
-            || iid == &<IFabricTransactionBase as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricTransaction as ::windows_core::ComInterface>::IID
+            || *iid == <IFabricTransactionBase as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`, `\"implement\"`*"]
 pub trait IFabricTransactionBase_Impl: Sized {
     fn get_Id(&self) -> *mut ::windows_core::GUID;
     fn get_IsolationLevel(&self) -> super::super::FABRIC_TRANSACTION_ISOLATION_LEVEL;
@@ -6627,7 +6587,7 @@ impl IFabricTransactionBase_Vtbl {
             get_IsolationLevel: get_IsolationLevel::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricTransactionBase as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricTransactionBase as ::windows_core::ComInterface>::IID
     }
 }

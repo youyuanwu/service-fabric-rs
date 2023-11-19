@@ -1,4 +1,3 @@
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`, `\"implement\"`*"]
 pub trait IFabricAsyncOperationCallback_Impl: Sized {
     fn Invoke(&self, context: ::core::option::Option<&IFabricAsyncOperationContext>);
 }
@@ -26,11 +25,11 @@ impl IFabricAsyncOperationCallback_Vtbl {
             Invoke: Invoke::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricAsyncOperationCallback as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricAsyncOperationCallback as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`, `\"Win32_Foundation\"`, `\"implement\"`*"]
+#[doc = "Required features: `\"Win32_Foundation\"`"]
 #[cfg(feature = "Win32_Foundation")]
 pub trait IFabricAsyncOperationContext_Impl: Sized {
     fn IsCompleted(&self) -> ::windows::Win32::Foundation::BOOLEAN;
@@ -106,11 +105,10 @@ impl IFabricAsyncOperationContext_Vtbl {
             Cancel: Cancel::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricAsyncOperationContext as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricAsyncOperationContext as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`, `\"implement\"`*"]
 pub trait IFabricGetReplicatorStatusResult_Impl: Sized {
     fn get_ReplicatorStatus(&self) -> *mut super::FABRIC_REPLICATOR_STATUS_QUERY_RESULT;
 }
@@ -137,11 +135,10 @@ impl IFabricGetReplicatorStatusResult_Vtbl {
             get_ReplicatorStatus: get_ReplicatorStatus::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricGetReplicatorStatusResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricGetReplicatorStatusResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`, `\"implement\"`*"]
 pub trait IFabricStringListResult_Impl: Sized {
     fn GetStrings(
         &self,
@@ -178,11 +175,10 @@ impl IFabricStringListResult_Vtbl {
             GetStrings: GetStrings::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStringListResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStringListResult as ::windows_core::ComInterface>::IID
     }
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`, `\"implement\"`*"]
 pub trait IFabricStringResult_Impl: Sized {
     fn get_String(&self) -> ::windows_core::PCWSTR;
 }
@@ -209,7 +205,7 @@ impl IFabricStringResult_Vtbl {
             get_String: get_String::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &::windows_core::GUID) -> bool {
-        iid == &<IFabricStringResult as ::windows_core::ComInterface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IFabricStringResult as ::windows_core::ComInterface>::IID
     }
 }

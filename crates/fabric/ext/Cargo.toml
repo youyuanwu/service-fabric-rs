@@ -8,10 +8,10 @@ log = "0.4"
 env_logger = "*"
 tokio = { version = "1", features = ["full"] }
 paste = "1.0"
-windows-core = "0.51"
+windows-core = "0.52"
 
 [dependencies.windows]
-version = "0.51"
+version = "0.52"
 features = [
     "implement",
     "Win32_System_Com",

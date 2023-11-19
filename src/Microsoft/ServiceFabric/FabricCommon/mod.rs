@@ -1,11 +1,14 @@
 #[cfg(feature = "ServiceFabric_FabricCommon_FabricClient")]
+#[doc = "Required features: `\"ServiceFabric_FabricCommon_FabricClient\"`"]
 pub mod FabricClient;
 #[cfg(feature = "ServiceFabric_FabricCommon_FabricRuntime")]
+#[doc = "Required features: `\"ServiceFabric_FabricCommon_FabricRuntime\"`"]
 pub mod FabricRuntime;
 #[cfg(feature = "ServiceFabric_FabricCommon_FabricTransport")]
+#[doc = "Required features: `\"ServiceFabric_FabricCommon_FabricTransport\"`"]
 pub mod FabricTransport;
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricAsyncOperationCallback(::windows_core::IUnknown);
 impl IFabricAsyncOperationCallback {
     pub unsafe fn Invoke<P0>(&self, context: P0)
@@ -19,26 +22,8 @@ impl IFabricAsyncOperationCallback {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricAsyncOperationCallback, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricAsyncOperationCallback {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricAsyncOperationCallback {}
-impl ::core::fmt::Debug for IFabricAsyncOperationCallback {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricAsyncOperationCallback")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricAsyncOperationCallback {
     type Vtable = IFabricAsyncOperationCallback_Vtbl;
-}
-impl ::core::clone::Clone for IFabricAsyncOperationCallback {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricAsyncOperationCallback {
     const IID: ::windows_core::GUID =
@@ -53,18 +38,18 @@ pub struct IFabricAsyncOperationCallback_Vtbl {
         context: *mut ::core::ffi::c_void,
     ),
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricAsyncOperationContext(::windows_core::IUnknown);
 impl IFabricAsyncOperationContext {
-    #[doc = "*Required features: `\"Win32_Foundation\"`*"]
+    #[doc = "Required features: `\"Win32_Foundation\"`"]
     #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn IsCompleted(&self) -> ::windows::Win32::Foundation::BOOLEAN {
         (::windows_core::Interface::vtable(self).IsCompleted)(::windows_core::Interface::as_raw(
             self,
         ))
     }
-    #[doc = "*Required features: `\"Win32_Foundation\"`*"]
+    #[doc = "Required features: `\"Win32_Foundation\"`"]
     #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CompletedSynchronously(&self) -> ::windows::Win32::Foundation::BOOLEAN {
         (::windows_core::Interface::vtable(self).CompletedSynchronously)(
@@ -85,26 +70,8 @@ impl IFabricAsyncOperationContext {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricAsyncOperationContext, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricAsyncOperationContext {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricAsyncOperationContext {}
-impl ::core::fmt::Debug for IFabricAsyncOperationContext {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricAsyncOperationContext")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricAsyncOperationContext {
     type Vtable = IFabricAsyncOperationContext_Vtbl;
-}
-impl ::core::clone::Clone for IFabricAsyncOperationContext {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricAsyncOperationContext {
     const IID: ::windows_core::GUID =
@@ -134,8 +101,8 @@ pub struct IFabricAsyncOperationContext_Vtbl {
     pub Cancel:
         unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricGetReplicatorStatusResult(::windows_core::IUnknown);
 impl IFabricGetReplicatorStatusResult {
     pub unsafe fn get_ReplicatorStatus(&self) -> *mut super::FABRIC_REPLICATOR_STATUS_QUERY_RESULT {
@@ -148,26 +115,8 @@ impl IFabricGetReplicatorStatusResult {
     IFabricGetReplicatorStatusResult,
     ::windows_core::IUnknown
 );
-impl ::core::cmp::PartialEq for IFabricGetReplicatorStatusResult {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricGetReplicatorStatusResult {}
-impl ::core::fmt::Debug for IFabricGetReplicatorStatusResult {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricGetReplicatorStatusResult")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricGetReplicatorStatusResult {
     type Vtable = IFabricGetReplicatorStatusResult_Vtbl;
-}
-impl ::core::clone::Clone for IFabricGetReplicatorStatusResult {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricGetReplicatorStatusResult {
     const IID: ::windows_core::GUID =
@@ -182,8 +131,8 @@ pub struct IFabricGetReplicatorStatusResult_Vtbl {
             this: *mut ::core::ffi::c_void,
         ) -> *mut super::FABRIC_REPLICATOR_STATUS_QUERY_RESULT,
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricStringListResult(::windows_core::IUnknown);
 impl IFabricStringListResult {
     pub unsafe fn GetStrings(
@@ -200,26 +149,8 @@ impl IFabricStringListResult {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricStringListResult, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricStringListResult {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricStringListResult {}
-impl ::core::fmt::Debug for IFabricStringListResult {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricStringListResult")
-            .field(&self.0)
-            .finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricStringListResult {
     type Vtable = IFabricStringListResult_Vtbl;
-}
-impl ::core::clone::Clone for IFabricStringListResult {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricStringListResult {
     const IID: ::windows_core::GUID =
@@ -235,8 +166,8 @@ pub struct IFabricStringListResult_Vtbl {
         buffereditems: *mut *mut ::windows_core::PCWSTR,
     ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"ServiceFabric_FabricCommon\"`*"]
 #[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct IFabricStringResult(::windows_core::IUnknown);
 impl IFabricStringResult {
     pub unsafe fn get_String(&self) -> ::windows_core::PCWSTR {
@@ -246,24 +177,8 @@ impl IFabricStringResult {
     }
 }
 ::windows_core::imp::interface_hierarchy!(IFabricStringResult, ::windows_core::IUnknown);
-impl ::core::cmp::PartialEq for IFabricStringResult {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IFabricStringResult {}
-impl ::core::fmt::Debug for IFabricStringResult {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IFabricStringResult").field(&self.0).finish()
-    }
-}
 unsafe impl ::windows_core::Interface for IFabricStringResult {
     type Vtable = IFabricStringResult_Vtbl;
-}
-impl ::core::clone::Clone for IFabricStringResult {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
 }
 unsafe impl ::windows_core::ComInterface for IFabricStringResult {
     const IID: ::windows_core::GUID =
