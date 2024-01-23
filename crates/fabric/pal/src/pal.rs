@@ -1,9 +1,12 @@
 #![allow(non_camel_case_types, non_snake_case, dead_code)]
 use std::ffi::c_void;
+use std::mem::size_of;
 
 use libc::{__errno_location, malloc};
 use windows::core::imp::LOAD_LIBRARY_FLAGS;
-use windows::Win32::Foundation::{ERROR_NOT_ENOUGH_MEMORY, STATUS_HEAP_CORRUPTION};
+use windows::Win32::Foundation::{
+    ERROR_BAD_ARGUMENTS, ERROR_NOT_ENOUGH_MEMORY, E_POINTER, STATUS_HEAP_CORRUPTION,
+};
 use windows::{
     core::{HRESULT, PCSTR, PWSTR},
     Win32::Foundation::{HANDLE, HMODULE},
@@ -52,11 +55,22 @@ pub unsafe extern "system" fn HeapAlloc(heap: isize, _flags: u32, len: usize) ->
         return std::ptr::null_mut();
     }
 
-    let p = malloc(len);
-    if p.is_null() {
-        SetLastError(ERROR_NOT_ENOUGH_MEMORY.0)
+    if len == 0 {
+        SetLastError(ERROR_BAD_ARGUMENTS.0);
+        return std::ptr::null_mut();
     }
-    p
+
+    // use vec to allocate contiguous memory. The first 2 bytes is used to store buff len.
+    let prefix_len = size_of::<usize>();
+    let mut vec = Vec::<u8>::with_capacity(len + prefix_len);
+    // write len to the prefix
+    let prefix_ptr = vec.as_mut_ptr() as *mut usize;
+    *prefix_ptr = len;
+
+    // return the vec buf at the data segment
+    let ptr_out = vec.as_mut_ptr().offset(prefix_len as isize);
+    std::mem::forget(vec);
+    ptr_out as *mut c_void
 }
 
 /// # Safety
@@ -69,7 +83,19 @@ pub unsafe extern "system" fn HeapFree(heap: isize, _flags: u32, ptr: *const c_v
         return 0; // fail to free
     }
 
-    libc::free(ptr as *mut c_void);
+    // do not support free null ptr.
+    if ptr.is_null() {
+        SetLastError(E_POINTER.0 as u32);
+        return 0;
+    }
+
+    // get vec cap. prefix is the out buffer size only.
+    let prefix_len = size_of::<usize>();
+    let prefix_ptr = ptr.offset(-(prefix_len as isize)) as *const usize;
+    let cap = *prefix_ptr + prefix_len;
+
+    let vec = Vec::from_raw_parts(prefix_ptr as *mut u8, 0, cap);
+    std::mem::drop(vec);
     1 // success
 }
 
@@ -153,4 +179,25 @@ pub unsafe extern "system" fn FormatMessageW(
     _args: *const *const i8,
 ) -> u32 {
     0
+}
+
+#[cfg(test)]
+mod tests {
+    use std::mem::size_of;
+
+    use crate::pal::HeapFree;
+
+    use super::{GetProcessHeap, HeapAlloc};
+
+    #[test]
+    fn test_memory_alloc() {
+        let p = unsafe { HeapAlloc(GetProcessHeap(), 0, size_of::<usize>()) };
+        assert!(!p.is_null());
+
+        let p_size = p as *mut usize;
+        unsafe { *p_size = 99 };
+
+        let ok = unsafe { HeapFree(GetProcessHeap(), 0, p) };
+        assert_ne!(ok, 0);
+    }
 }
